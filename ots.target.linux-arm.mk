@@ -56,6 +56,8 @@ LOCAL_SRC_FILES := \
 
 # Flags passed to both C and C++ files.
 MY_CFLAGS := \
+	-fstack-protector \
+	--param=ssp-buffer-size=4 \
 	-Werror \
 	-fno-exceptions \
 	-fno-strict-aliasing \
@@ -81,6 +83,7 @@ MY_CFLAGS := \
 	-fno-short-enums \
 	-finline-limit=64 \
 	-Wa,--noexecstack \
+	-U_FORTIFY_SOURCE \
 	-Wno-error=extra \
 	-Wno-error=ignored-qualifiers \
 	-Wno-error=type-limits \
@@ -95,6 +98,7 @@ MY_CFLAGS := \
 MY_CFLAGS_C :=
 
 MY_DEFS := \
+	'-D_FORTIFY_SOURCE=2' \
 	'-D_FILE_OFFSET_BITS=64' \
 	'-DNO_TCMALLOC' \
 	'-DDISABLE_NACL' \
@@ -142,6 +146,8 @@ LOCAL_CPPFLAGS := \
 ### Rules for final target.
 
 LOCAL_LDFLAGS := \
+	-Wl,-z,now \
+	-Wl,-z,relro \
 	-Wl,-z,noexecstack \
 	-fPIC \
 	-Wl,-z,relro \
