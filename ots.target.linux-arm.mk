@@ -84,11 +84,11 @@ MY_CFLAGS := \
 	-finline-limit=64 \
 	-Wa,--noexecstack \
 	-U_FORTIFY_SOURCE \
-	-Wno-error=extra \
-	-Wno-error=ignored-qualifiers \
-	-Wno-error=type-limits \
-	-Wno-error=non-virtual-dtor \
-	-Wno-error=sign-promo \
+	-Wno-extra \
+	-Wno-ignored-qualifiers \
+	-Wno-type-limits \
+	-Wno-non-virtual-dtor \
+	-Wno-sign-promo \
 	-Os \
 	-g \
 	-fomit-frame-pointer \
