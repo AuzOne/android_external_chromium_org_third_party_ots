@@ -81,8 +81,6 @@ MY_CFLAGS := \
 	-Wno-extra \
 	-Wno-ignored-qualifiers \
 	-Wno-type-limits \
-	-Wno-non-virtual-dtor \
-	-Wno-sign-promo \
 	-fno-stack-protector \
 	-Os \
 	-g \
@@ -135,7 +133,9 @@ LOCAL_CPPFLAGS := \
 	-fno-threadsafe-statics \
 	-fvisibility-inlines-hidden \
 	-Wsign-compare \
-	-Wno-error=c++0x-compat
+	-Wno-error=c++0x-compat \
+	-Wno-non-virtual-dtor \
+	-Wno-sign-promo
 
 ### Rules for final target.
 
