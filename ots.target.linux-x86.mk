@@ -56,6 +56,7 @@ LOCAL_SRC_FILES := \
 
 # Flags passed to both C and C++ files.
 MY_CFLAGS := \
+	--param=ssp-buffer-size=4 \
 	-Werror \
 	-fno-exceptions \
 	-fno-strict-aliasing \
@@ -65,27 +66,22 @@ MY_CFLAGS := \
 	-fvisibility=hidden \
 	-pipe \
 	-fPIC \
-	-mthumb \
-	-march=armv7-a \
-	-mtune=cortex-a8 \
-	-mfloat-abi=softfp \
-	-mfpu=vfpv3-d16 \
-	-fno-tree-sra \
-	-fuse-ld=gold \
-	-Wno-psabi \
-	-mthumb-interwork \
+	-m32 \
+	-mmmx \
+	-march=pentium4 \
+	-msse2 \
+	-mfpmath=sse \
 	-ffunction-sections \
 	-funwind-tables \
 	-g \
-	-fstack-protector \
 	-fno-short-enums \
 	-finline-limit=64 \
 	-Wa,--noexecstack \
-	-Wno-error=extra \
-	-Wno-error=ignored-qualifiers \
-	-Wno-error=type-limits \
-	-Wno-error=non-virtual-dtor \
-	-Wno-error=sign-promo \
+	-U_FORTIFY_SOURCE \
+	-Wno-extra \
+	-Wno-ignored-qualifiers \
+	-Wno-type-limits \
+	-fno-stack-protector \
 	-Os \
 	-g \
 	-fomit-frame-pointer \
@@ -95,7 +91,9 @@ MY_CFLAGS := \
 MY_CFLAGS_C :=
 
 MY_DEFS := \
+	'-DUSE_SKIA' \
 	'-D_FILE_OFFSET_BITS=64' \
+	'-DUSE_LINUX_BREAKPAD' \
 	'-DNO_TCMALLOC' \
 	'-DDISABLE_NACL' \
 	'-DCHROMIUM_BUILD' \
@@ -105,15 +103,14 @@ MY_DEFS := \
 	'-DENABLE_GPU=1' \
 	'-DUSE_OPENSSL=1' \
 	'-DENABLE_EGLIMAGE=1' \
-	'-DUSE_SKIA=1' \
+	'-DENABLE_LANGUAGE_DETECTION=1' \
 	'-D__STDC_CONSTANT_MACROS' \
 	'-D__STDC_FORMAT_MACROS' \
 	'-DANDROID' \
 	'-D__GNU_SOURCE=1' \
 	'-DUSE_STLPORT=1' \
 	'-D_STLP_USE_PTR_SPECIALIZATIONS=1' \
-	'-DCHROME_SYMBOLS_ID=""' \
-	'-DANDROID_UPSTREAM_BRINGUP=1' \
+	'-DCHROME_BUILD_ID=""' \
 	'-DDYNAMIC_ANNOTATIONS_ENABLED=1' \
 	'-DWTF_USE_DYNAMIC_ANNOTATIONS=1' \
 	'-D_DEBUG'
@@ -136,21 +133,21 @@ LOCAL_CPPFLAGS := \
 	-fno-threadsafe-statics \
 	-fvisibility-inlines-hidden \
 	-Wsign-compare \
-	-Wno-abi \
-	-Wno-error=c++0x-compat
+	-Wno-error=c++0x-compat \
+	-Wno-non-virtual-dtor \
+	-Wno-sign-promo
 
 ### Rules for final target.
 
 LOCAL_LDFLAGS := \
+	-Wl,-z,now \
+	-Wl,-z,relro \
 	-Wl,-z,noexecstack \
 	-fPIC \
-	-Wl,-z,relro \
-	-Wl,-z,now \
-	-fuse-ld=gold \
+	-m32 \
 	-nostdlib \
 	-Wl,--no-undefined \
 	-Wl,--exclude-libs=ALL \
-	-Wl,--icf=safe \
 	-Wl,-O1 \
 	-Wl,--as-needed \
 	-Wl,--gc-sections
