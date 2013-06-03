@@ -51,7 +51,8 @@ LOCAL_SRC_FILES := \
 	third_party/ots/src/vdmx.cc \
 	third_party/ots/src/vhea.cc \
 	third_party/ots/src/vmtx.cc \
-	third_party/ots/src/vorg.cc
+	third_party/ots/src/vorg.cc \
+	third_party/ots/src/woff2.cc
 
 
 # Flags passed to both C and C++ files.
@@ -116,7 +117,9 @@ LOCAL_CFLAGS := $(MY_CFLAGS_C) $(MY_CFLAGS) $(MY_DEFS)
 
 # Include paths placed before CFLAGS/CPPFLAGS
 LOCAL_C_INCLUDES := \
+	$(LOCAL_PATH) \
 	$(LOCAL_PATH)/third_party/ots/include \
+	$(LOCAL_PATH)/third_party/lzma_sdk \
 	$(LOCAL_PATH)/third_party/zlib \
 	$(PWD)/frameworks/wilhelm/include \
 	$(PWD)/bionic \
