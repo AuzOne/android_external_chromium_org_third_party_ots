@@ -51,7 +51,8 @@ LOCAL_SRC_FILES := \
 	third_party/ots/src/vdmx.cc \
 	third_party/ots/src/vhea.cc \
 	third_party/ots/src/vmtx.cc \
-	third_party/ots/src/vorg.cc
+	third_party/ots/src/vorg.cc \
+	third_party/ots/src/woff2.cc
 
 
 # Flags passed to both C and C++ files.
@@ -97,7 +98,6 @@ MY_DEFS := \
 	'-DNO_TCMALLOC' \
 	'-DDISABLE_NACL' \
 	'-DCHROMIUM_BUILD' \
-	'-DENABLE_DOUBLE_RESOURCE_LOAD_TIMING' \
 	'-DUSE_LIBJPEG_TURBO=1' \
 	'-DUSE_PROPRIETARY_CODECS' \
 	'-DENABLE_GPU=1' \
@@ -119,7 +119,9 @@ LOCAL_CFLAGS := $(MY_CFLAGS_C) $(MY_CFLAGS) $(MY_DEFS)
 
 # Include paths placed before CFLAGS/CPPFLAGS
 LOCAL_C_INCLUDES := \
+	$(LOCAL_PATH) \
 	$(LOCAL_PATH)/third_party/ots/include \
+	$(LOCAL_PATH)/third_party/lzma_sdk \
 	$(LOCAL_PATH)/third_party/zlib \
 	$(PWD)/frameworks/wilhelm/include \
 	$(PWD)/bionic \
