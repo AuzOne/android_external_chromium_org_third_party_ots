@@ -68,7 +68,6 @@ MY_CFLAGS_Debug := \
 	-fvisibility=hidden \
 	-pipe \
 	-fPIC \
-	-g \
 	-EL \
 	-mhard-float \
 	-ffunction-sections \
@@ -150,7 +149,6 @@ MY_CFLAGS_Release := \
 	-fvisibility=hidden \
 	-pipe \
 	-fPIC \
-	-g \
 	-EL \
 	-mhard-float \
 	-ffunction-sections \

@@ -67,7 +67,6 @@ MY_CFLAGS_Debug := \
 	-fvisibility=hidden \
 	-pipe \
 	-fPIC \
-	-g \
 	-m32 \
 	-mmmx \
 	-march=pentium4 \
@@ -151,7 +150,6 @@ MY_CFLAGS_Release := \
 	-fvisibility=hidden \
 	-pipe \
 	-fPIC \
-	-g \
 	-m32 \
 	-mmmx \
 	-march=pentium4 \
