@@ -68,7 +68,6 @@ MY_CFLAGS_Debug := \
 	-fvisibility=hidden \
 	-pipe \
 	-fPIC \
-	-g \
 	-fno-tree-sra \
 	-fuse-ld=gold \
 	-Wno-psabi \
@@ -151,7 +150,6 @@ MY_CFLAGS_Release := \
 	-fvisibility=hidden \
 	-pipe \
 	-fPIC \
-	-g \
 	-fno-tree-sra \
 	-fuse-ld=gold \
 	-Wno-psabi \
