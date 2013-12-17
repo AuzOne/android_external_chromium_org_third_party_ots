@@ -120,7 +120,6 @@ MY_DEFS_Debug := \
 LOCAL_C_INCLUDES_Debug := \
 	$(LOCAL_PATH) \
 	$(LOCAL_PATH)/third_party/ots/include \
-	$(LOCAL_PATH)/third_party/lzma_sdk \
 	$(LOCAL_PATH)/third_party/zlib \
 	$(PWD)/frameworks/wilhelm/include \
 	$(PWD)/bionic \
@@ -205,7 +204,6 @@ MY_DEFS_Release := \
 LOCAL_C_INCLUDES_Release := \
 	$(LOCAL_PATH) \
 	$(LOCAL_PATH)/third_party/ots/include \
-	$(LOCAL_PATH)/third_party/lzma_sdk \
 	$(LOCAL_PATH)/third_party/zlib \
 	$(PWD)/frameworks/wilhelm/include \
 	$(PWD)/bionic \
