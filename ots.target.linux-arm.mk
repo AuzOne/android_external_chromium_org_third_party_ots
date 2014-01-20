@@ -42,6 +42,7 @@ LOCAL_SRC_FILES := \
 	third_party/ots/src/loca.cc \
 	third_party/ots/src/ltsh.cc \
 	third_party/ots/src/maxp.cc \
+	third_party/ots/src/math.cc \
 	third_party/ots/src/metrics.cc \
 	third_party/ots/src/name.cc \
 	third_party/ots/src/os2.cc \
