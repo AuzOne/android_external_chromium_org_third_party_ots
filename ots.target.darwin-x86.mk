@@ -68,11 +68,10 @@ MY_CFLAGS_Debug := \
 	-fvisibility=hidden \
 	-pipe \
 	-fPIC \
-	-m32 \
-	-mmmx \
-	-march=pentium4 \
 	-msse2 \
 	-mfpmath=sse \
+	-mmmx \
+	-m32 \
 	-fuse-ld=gold \
 	-ffunction-sections \
 	-funwind-tables \
@@ -156,11 +155,10 @@ MY_CFLAGS_Release := \
 	-fvisibility=hidden \
 	-pipe \
 	-fPIC \
-	-m32 \
-	-mmmx \
-	-march=pentium4 \
 	-msse2 \
 	-mfpmath=sse \
+	-mmmx \
+	-m32 \
 	-fuse-ld=gold \
 	-ffunction-sections \
 	-funwind-tables \
