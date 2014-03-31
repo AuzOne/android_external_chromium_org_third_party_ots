@@ -69,9 +69,10 @@ MY_CFLAGS_Debug := \
 	-fvisibility=hidden \
 	-pipe \
 	-fPIC \
-	-fno-tree-sra \
+	-Wno-unused-local-typedefs \
+	-m64 \
+	-march=x86-64 \
 	-fuse-ld=gold \
-	-Wno-psabi \
 	-ffunction-sections \
 	-funwind-tables \
 	-g \
@@ -137,7 +138,6 @@ LOCAL_CPPFLAGS_Debug := \
 	-fno-threadsafe-statics \
 	-fvisibility-inlines-hidden \
 	-Wsign-compare \
-	-Wno-abi \
 	-Wno-non-virtual-dtor \
 	-Wno-sign-promo
 
@@ -155,9 +155,10 @@ MY_CFLAGS_Release := \
 	-fvisibility=hidden \
 	-pipe \
 	-fPIC \
-	-fno-tree-sra \
+	-Wno-unused-local-typedefs \
+	-m64 \
+	-march=x86-64 \
 	-fuse-ld=gold \
-	-Wno-psabi \
 	-ffunction-sections \
 	-funwind-tables \
 	-g \
@@ -224,7 +225,6 @@ LOCAL_CPPFLAGS_Release := \
 	-fno-threadsafe-statics \
 	-fvisibility-inlines-hidden \
 	-Wsign-compare \
-	-Wno-abi \
 	-Wno-non-virtual-dtor \
 	-Wno-sign-promo
 
@@ -241,13 +241,11 @@ LOCAL_LDFLAGS_Debug := \
 	-Wl,-z,relro \
 	-Wl,-z,noexecstack \
 	-fPIC \
-	-Wl,-z,relro \
-	-Wl,-z,now \
+	-m64 \
 	-fuse-ld=gold \
 	-nostdlib \
 	-Wl,--no-undefined \
 	-Wl,--exclude-libs=ALL \
-	-Wl,--icf=safe \
 	-Wl,--gc-sections \
 	-Wl,--warn-shared-textrel \
 	-Wl,-O1 \
@@ -260,13 +258,11 @@ LOCAL_LDFLAGS_Release := \
 	-Wl,-z,relro \
 	-Wl,-z,noexecstack \
 	-fPIC \
-	-Wl,-z,relro \
-	-Wl,-z,now \
+	-m64 \
 	-fuse-ld=gold \
 	-nostdlib \
 	-Wl,--no-undefined \
 	-Wl,--exclude-libs=ALL \
-	-Wl,--icf=safe \
 	-Wl,-O1 \
 	-Wl,--as-needed \
 	-Wl,--gc-sections \
