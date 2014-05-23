@@ -69,6 +69,7 @@ MY_CFLAGS_Debug := \
 	-fvisibility=hidden \
 	-pipe \
 	-fPIC \
+	-Wno-unused-local-typedefs \
 	-ffunction-sections \
 	-funwind-tables \
 	-g \
@@ -155,6 +156,7 @@ MY_CFLAGS_Release := \
 	-fvisibility=hidden \
 	-pipe \
 	-fPIC \
+	-Wno-unused-local-typedefs \
 	-ffunction-sections \
 	-funwind-tables \
 	-g \
