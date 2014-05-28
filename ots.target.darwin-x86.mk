@@ -69,6 +69,7 @@ MY_CFLAGS_Debug := \
 	-fvisibility=hidden \
 	-pipe \
 	-fPIC \
+	-Wno-unused-local-typedefs \
 	-msse2 \
 	-mfpmath=sse \
 	-mmmx \
@@ -161,6 +162,7 @@ MY_CFLAGS_Release := \
 	-fvisibility=hidden \
 	-pipe \
 	-fPIC \
+	-Wno-unused-local-typedefs \
 	-msse2 \
 	-mfpmath=sse \
 	-mmmx \
