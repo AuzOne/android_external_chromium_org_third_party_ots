@@ -24,6 +24,8 @@ LOCAL_GENERATED_SOURCES :=
 GYP_COPIED_SOURCE_ORIGIN_DIRS :=
 
 LOCAL_SRC_FILES := \
+	third_party/ots/src/cbdt.cc \
+	third_party/ots/src/cblc.cc \
 	third_party/ots/src/cff.cc \
 	third_party/ots/src/cff_type2_charstring.cc \
 	third_party/ots/src/cmap.cc \
